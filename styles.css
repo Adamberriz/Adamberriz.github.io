@@ -1,0 +1,210 @@
+/* Simple, professional stylesheet --> neutral background + white cards */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+/* Make the page fill the viewport and push footer to bottom when content is short */
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  background: #f6f8fa; /* subtle neutral */
+  color: #0f1724; /* softened black */
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ensure body covers viewport */
+}
+
+/* central container used for header/main/footer spacing */
+/* reduce horizontal gutters and slightly increase max-width to reduce background visibility */
+header, main, footer { width: 100%; max-width: 980px; margin: 0 auto; padding: 18px 16px; }
+
+/* allow main to expand so footer sits at bottom */
+main { flex: 1 0 auto; }
+
+/* Header */
+header {
+  text-align: center;
+  background: transparent;
+  border-bottom: none;
+  padding-top: 12px;
+  padding-bottom: 6px;
+}
+header h1 { margin: 0; font-size: 1.6rem; font-weight: 600; color: #0b1220; text-align: center; }
+
+/* Contact info - compact and consistent */
+.contact-list {
+  list-style: none;
+  margin: 10px 0 0 0;
+  padding: 0;
+  display: inline-flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+  color: #475569;
+  justify-content: center; /* center contact row */
+}
+.contact-list a { color: #0b63d6; text-decoration: none; }
+.contact-list a:hover, .contact-list a:focus { text-decoration: underline; }
+.contact-list img.icon { width: 18px; height: 18px; vertical-align: middle; border-radius: 2px; }
+
+/* Make images and icons responsive */
+img { max-width: 100%; height: auto; display: block; }
+
+
+/* Sections: white cards with subtle border */
+section {
+  background: #ffffff;
+  margin: 14px 0;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #eef2f6;
+  text-align: center; /* center most section text */
+}
+
+/* Layout for projects aside + content */
+.layout {
+  display: grid;
+  grid-template-columns: 100px 1fr; /* slightly narrower aside to hug left */
+  gap: 12px; /* reduced gap so content sits closer together */
+  align-items: start;
+}
+
+.aside-inner { text-align: left; }
+aside#projects { position: sticky; top: 18px; align-self: start; }
+.projects-list { list-style: none; padding: 0; margin: 8px 0 0 0; display: flex; flex-direction: column; gap: 6px; }
+.projects-list a { color: #0b63d6; text-decoration: none; }
+.projects-list a:hover, .projects-list a:focus { text-decoration: underline; }
+
+.content { min-width: 0; text-align: center; }
+
+/* Headings */
+h2 {
+  margin: 0 0 12px 0;
+  font-size: 1.05rem;
+  color: #0b1220;
+  font-weight: 600;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #eef2f6;
+}
+h3 { margin: 0 0 8px 0; font-size: 1rem; font-weight: 600; color: #0b1220; }
+
+/* Job meta (dates) */
+.meta { color: #64748b; font-size: 0.9rem; margin-top: 6px; }
+.meta time { font-weight: 500; }
+
+/* Lists */
+article ul { margin: 10px 0 0 20px; color: #111827; }
+
+/* Links & focus states (accessibility) */
+a:focus { outline: 3px solid rgba(11,99,214,0.18); outline-offset: 2px; }
+
+/* Footer */
+footer { text-align: center; padding: 16px 0 28px; color: #475569; font-size: 0.9rem; }
+
+/* Responsive adjustments */
+@media (min-width: 720px) {
+  header h1 { font-size: 1.9rem; }
+  section { padding: 22px; }
+}
+
+/* Mobile-first adjustments: tighten spacing and scale down type on small screens */
+@media (max-width: 479px) {
+  header, main, footer { padding-left: 14px; padding-right: 14px; }
+  header h1 { font-size: 1.25rem; }
+  .contact-list { gap: 8px; font-size: 0.9rem; }
+  section { margin: 12px 0; padding: 14px; }
+  h2 { font-size: 1rem; }
+  article ul { margin-left: 18px; }
+}
+
+/* Stack aside and content on small screens */
+@media (max-width: 899px) {
+  .layout { grid-template-columns: 1fr; }
+  aside#projects { position: relative; top: auto; }
+}
+
+/* keep project list items left-aligned even when the rest is centered */
+.projects-list li { text-align: left; }
+
+@media (min-width: 480px) and (max-width: 719px) {
+  header h1 { font-size: 1.4rem; }
+  .contact-list { gap: 10px; }
+  section { padding: 16px; }
+}
+
+/* Optional coursework two-column layout on very wide screens */
+.coursework { column-gap: 24px; }
+@media (min-width: 900px) { .coursework { column-count: 2; } }
+
+/* Home icon: accessible inline or floating variations */
+
+/* Screen-reader only helper (skip if you already have .sr-only) */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Inline home link (intended for header) */
+.home-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+  text-decoration: none;
+}
+.home-link .home-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  color: #0b63d6; /* accent — adjust to match your palette */
+  vertical-align: middle;
+}
+.home-link:hover .home-icon,
+.home-link:focus .home-icon {
+  color: #084ab0;
+}
+
+/* Floating home button (top-left) */
+.home-floating {
+  position: fixed;
+  left: 12px;
+  top: 12px;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #e6eef6;
+  color: #0b63d6;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(12, 18, 29, 0.06);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+@media (max-width: 479px) {
+  .home-floating { left: 10px; top: 10px; width: 36px; height: 36px; }
+}
+.home-floating:hover,
+.home-floating:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(12, 18, 29, 0.12);
+}
+.home-floating .home-icon {
+  width: 20px;
+  height: 20px;
+  color: currentColor;
+}

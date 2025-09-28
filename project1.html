@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pi-hole — Project</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="home-floating" href="ResumeWebPage.html" title="Back to main page" aria-label="Back to main page">
+  <svg class="home-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+  </svg>
+</a>
+  <header>
+    <h1>Pi-hole</h1>
+  </header>
+  <main>
+    <section>
+      <h2>Overview</h2>
+      <p>Pi-hole is a network-wide ad and tracker blocking service that acts as a DNS sinkhole. Once installed on a small server typically on a Raspberry Pi but can work on any device. Pi-hole intercepts DNS queries and blocks known ad, tracker, and malicious domains using blocklists. It protects every device on your network without installing software on each device.</p>
+
+      <h3>How it works</h3>
+      <p>Pi-hole runs a DNS server that answers DNS queries for devices on your network. When a hostname appears on a blocklist, Pi-hole responds with dropping the request, this prevents ads or tracker from loading. It typically forwards allowed queries to an upstream resolver.</p>
+
+      <h3>Benefits</h3>
+      <ul>
+        <li>Network-wide ad and tracker blocking</li>
+        <li>Improved privacy by reducing connections to tracking domains.</li>
+        <li>Reduced bandwidth and fewer unwanted requests, sometimes speeding up page loads.</li>
+        <li>Centralized management and statistics via a web admin interface.</li>
+      </ul>
+
+      <h3>Quick install & setup notes</h3>
+      <p>Official Pi-hole installs are documented at the project website. A typical quick workflow:</p>
+      <ol>
+        <li>Choose a host: Raspberry Pi, small Linux VM, or Docker container.</li>
+        <li>Install Pi-hole using the official installer or container image (follow the docs for the latest, secure instructions).</li>
+        <li>Configure your router or individual devices to use the Pi-hole host as their DNS server (or enable DHCP through Pi-hole).</li>
+        <li>Open the web admin console to review blocked queries, whitelist/blacklist domains, and tune blocklists.</li>
+      </ol>
+
+      <h3>Administration & features</h3>
+      <p>The Pi-hole web interface provides real-time statistics, long-term graphs, query logs, and tools to manage blocklists, whitelists, and blacklists. Advanced features include conditional forwarding, DHCP server integration, and integration with upstream DNS-over-HTTPS or DNS-over-TLS providers.</p>
+
+      <h3>Resources</h3>
+      <p>Official site and documentation: <a href="https://pi-hole.net" target="_blank" rel="noopener">pi-hole.net</a><br>
+      Documentation and install instructions: <a href="https://docs.pi-hole.net/" target="_blank" rel="noopener">docs.pi-hole.net</a></p>
+
+      <p><a href="ResumeWebPage.html">Back to main page</a></p>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 Adam Berriz</p>
+  </footer>
+</body>
+</html>
