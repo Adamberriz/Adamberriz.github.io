@@ -23,7 +23,7 @@
       <h3>How it works</h3>
       <p>Pi-hole runs a DNS server that answers DNS queries for devices on your network. When a hostname appears on a blocklist, Pi-hole responds with dropping the request, this prevents ads or tracker from loading. It typically forwards allowed queries to an upstream resolver.</p>
 
-      <h3>Benefits</h3>
+      <h3>Why to implement</h3>
       <ul>
         <li>Network-wide ad and tracker blocking</li>
         <li>Improved privacy by reducing connections to tracking domains.</li>
@@ -31,12 +31,12 @@
         <li>Centralized management and statistics via a web admin interface.</li>
       </ul>
 
-      <h3>Quick install & setup notes</h3>
-      <p>Official Pi-hole installs are documented at the project website. A typical quick workflow:</p>
+      <h3>How to Setup</h3>
+      <p>Official Pi-hole installs and setups are documented on their offical website.</p>
       <ol>
         <li>Choose a host: Raspberry Pi, small Linux VM, or Docker container.</li>
-        <li>Install Pi-hole using the official installer or container image (follow the docs for the latest, secure instructions).</li>
-        <li>Configure your router or individual devices to use the Pi-hole host as their DNS server (or enable DHCP through Pi-hole).</li>
+        <li>Install Pi-hole using the official installer or container image.</li>
+        <li>Configure your router or individual devices to use the Pi-hole host as their DNS server.</li>
         <li>Open the web admin console to review blocked queries, whitelist/blacklist domains, and tune blocklists.</li>
       </ol>
 
@@ -46,6 +46,11 @@
       <h3>Resources</h3>
       <p>Official site and documentation: <a href="https://pi-hole.net" target="_blank" rel="noopener">pi-hole.net</a><br>
       Documentation and install instructions: <a href="https://docs.pi-hole.net/" target="_blank" rel="noopener">docs.pi-hole.net</a></p>
+      <h3>Screenshots From Pi-Hole</h3>
+    <figure>
+      <img class="screenshot" src="Images/Piholedashboard.jpg" alt="Pi-Hole Dashboard">
+      <figcaption>Pi-Hole Dashboard</figcaption>
+    </figure>
 
       <p><a href="index.html">Back to main page</a></p>
     </section>
